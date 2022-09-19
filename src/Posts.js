@@ -26,6 +26,16 @@ function Post(props) {
     const [isSave, setSave] = React.useState(false)
     const [number, setNumber] = React.useState(props.like)
     
+    function interacao(){
+        setLike(!isLike)
+
+        if(isLike == false){
+            setNumber(Number(number) + 1)
+        }
+        else{
+            setNumber(Number(number) - 1)
+        }
+    }
 
     return (
         <div class="post">
@@ -40,14 +50,14 @@ function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.content} onClick={(() => setLike(!isLike))} />
+                <img src={props.content} onClick={interacao} />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div >  
                         
-                        {isLike ? <ion-icon name="heart" onClick={(() => setLike(!isLike))} class="like"></ion-icon> : <ion-icon name="heart-outline" onClick={(() => setLike(!isLike))}></ion-icon>}
+                        {isLike ? <ion-icon name="heart" onClick={interacao} class="like"></ion-icon> : <ion-icon name="heart-outline" onClick={interacao}></ion-icon>}
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
@@ -57,7 +67,7 @@ function Post(props) {
                 </div>
 
                 <div class="curtidas">
-                    <img src={props.lastLikeImage} onClick={numeroCurtida}/>
+                    <img src={props.lastLikeImage} />
                     <div class="texto">
                         Curtido por <strong>{props.lastLikeUser}</strong> e  outras <strong>{number}</strong> pessoas
                     </div>
