@@ -1,5 +1,6 @@
 //story: img / usuario 
 
+//Estrutura principal
 export default function Stories() {
     const story = [
         {urlImage:"assets/img/9gag.svg", user:"9gag" },

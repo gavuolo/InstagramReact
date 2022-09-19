@@ -1,4 +1,4 @@
-//conteúdo
+//corpo para <conteudo>
 import Stories from "./Stories"
 import Posts from "./Posts"
 import Sidebar from "./Sidebar"
@@ -17,6 +17,6 @@ export default function Body() {
 }
 
 //separação dentro de body:
-//stories
-//posts
-//sidebar (usuário/sugestões)
+//stories (componente)
+//posts (componente)
+//sidebar (componente)

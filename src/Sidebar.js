@@ -1,9 +1,7 @@
-//principal -> usuario 
-//fazer mudar o nome e foto de usuário
-
+//principal -> usuario (editar imagem e nome)
 import React from "react"
 
-//sugestoes
+//Estrutura principal
 export default function Sidebar() {
     const sugest = [
         { image: "assets/img/chibirdart.svg", user: "chibirdart", reason: "Segue você" },
@@ -12,8 +10,10 @@ export default function Sidebar() {
         { image: "assets/img/smallcutecats.svg", user: "smallcutecats", reason: "Segue você" }
     ]
     const mainUser = [
-        { mainImage: "assets/img/catanacomics.svg", mainName: "Cortana"}
+        { mainImage: "assets/img/catanacomics.svg", mainName: "Cortana" }
     ]
+
+
     return (
         <div class="sidebar">
             {mainUser.map((a) => <UsuarioLogado mainImage={a.mainImage} mainName={a.mainName} />)}
@@ -39,6 +39,7 @@ export default function Sidebar() {
     )
 }
 
+//Sugestoes
 function Sugestoes(props) {
     console.log(props)
     return (
@@ -56,18 +57,19 @@ function Sugestoes(props) {
     )
 }
 
+
+// Usuário principal
 function UsuarioLogado(props) {
     const [editimage, setEditimage] = React.useState(props.mainImage)
     const [usermain, setUsermain] = React.useState(props.mainName)
-    
+
 
     function mudarUsuario() {
         let userPrompt = prompt("Insira o nome de Usuário")
         setUsermain(userPrompt)
-       
     }
 
-    function mudarImagem(){
+    function mudarImagem() {
         let imagePrompt = prompt("Insira a URL de uma imagem")
         setEditimage(imagePrompt)
     }
